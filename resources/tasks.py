@@ -16,7 +16,7 @@ def add_task():
 
     if task_id:
         task = tasks.select_task_by_id(task_id)
-        return jsonify({'task': task})
+        return jsonify(task)
     return jsonify({'message': 'Internal Error'})
 
 
