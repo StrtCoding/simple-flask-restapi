@@ -1,10 +1,11 @@
 from flask import Flask
-
+from flask_cors import CORS
 
 from database import setup
 from resources.tasks import tasks_bp
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/tasks/*": {"origins": "*"}})
 setup.create_tables()
 
 
